@@ -65,7 +65,7 @@ export function VenturesSection() {
         </motion.div>
 
         {/* Ventures Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-0">
           {ventures.map((venture, index) => {
             const Icon = venture.icon;
             
@@ -81,7 +81,7 @@ export function VenturesSection() {
             const isFirstCol = col === 0;
             const isLastCol = col === cols - 1;
             
-            // Build border classes dynamically
+            // Build border classes dynamically (only for large screens)
             const borderClasses = [];
             
             // Top border - only if not first row
@@ -116,7 +116,7 @@ export function VenturesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
-                className={`p-8 hover:text-slate-900 transition-all group bg-black border-none lg:border-slate-400  ${borderClasses.join(' ')}`}
+                className={`p-8 hover:text-slate-900 transition-all group bg-black lg:border-slate-400 ${borderClasses.map(cls => `lg:${cls}`).join(' ')}`}
               >
                     <div className="w-12 h-12 flex items-center justify-center transition-all text-slate-400">
                   <Icon size={20} />
