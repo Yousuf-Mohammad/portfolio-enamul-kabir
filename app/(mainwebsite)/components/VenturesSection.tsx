@@ -65,7 +65,7 @@ export function VenturesSection() {
         </motion.div>
 
         {/* Ventures Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-0">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4">
           {ventures.map((venture, index) => {
             const Icon = venture.icon;
             
@@ -81,32 +81,32 @@ export function VenturesSection() {
             const isFirstCol = col === 0;
             const isLastCol = col === cols - 1;
             
-            // Build border classes dynamically (only for large screens)
+            // Build border classes dynamically
             const borderClasses = [];
             
             // Top border - only if not first row
             if (!isFirstRow) {
-              borderClasses.push('border-t');
+              borderClasses.push('lg:border-t');
             }
             
             // Bottom border - only if not last row
             if (!isLastRow) {
-              borderClasses.push('border-b');
+              borderClasses.push('lg:border-b');
             }
             
             // Left border - only if not first column
             if (!isFirstCol) {
-              borderClasses.push('border-l');
+              borderClasses.push('lg:border-l');
             }
             
             // Right border - only if not last column
             if (!isLastCol) {
-              borderClasses.push('border-r');
+              borderClasses.push('lg:border-r');
             }
             
             // If it's the only item in the last row, add all borders
             if (isLastRow && ventures.length % cols === 1) {
-              borderClasses.push('border-t', 'border-l', 'border-r');
+              borderClasses.push('lg:border-t', 'lg:border-l', 'lg:border-r');
             }
             
             return (
@@ -116,7 +116,7 @@ export function VenturesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
-                className={`p-8 hover:text-slate-900 transition-all group bg-black lg:border-slate-400 ${borderClasses.map(cls => `lg:${cls}`).join(' ')}`}
+                className={`p-8 hover:text-slate-900 transition-all group bg-black lg:border-slate-400 ${borderClasses.join(' ')}`}
               >
                     <div className="w-12 h-12 flex items-center justify-center transition-all text-slate-400">
                   <Icon size={20} />
