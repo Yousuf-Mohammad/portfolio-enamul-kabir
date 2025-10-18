@@ -29,7 +29,7 @@ export function HeroSection() {
       </div> 
 
       {/* Content */}
-      <div className="container relative z-10  px-10 lg:px-36">
+      <div className="container relative z-10  px-10 ">
         <div className="max-w-5xl ">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

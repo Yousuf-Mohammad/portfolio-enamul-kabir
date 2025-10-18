@@ -48,7 +48,7 @@ export function VenturesSection() {
 
   return (
     <section id="ventures" className="">
-      <div className="container px-10 lg:px-36 py-10">
+      <div className="container px-10  py-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

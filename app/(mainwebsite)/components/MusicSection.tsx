@@ -50,7 +50,7 @@ export function MusicSection() {
 
   return (
     <section id="music" >
-      <div className="container mx-auto px-10 lg:px-36">
+      <div className="container mx-auto px-10 ">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

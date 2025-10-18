@@ -15,7 +15,7 @@ export function AboutSection() {
 
   return (
     <section id="about" className="py-32 border-t border-border">
-      <div className="container mx-auto px-10 lg:px-36">
+      <div className="container mx-auto px-10 ">
         {/* Stats Grid */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

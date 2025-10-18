@@ -25,7 +25,7 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="">
-      <div className="container px-10 lg:px-36 py-10">
+      <div className="container px-10  py-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
