@@ -153,8 +153,8 @@ export function GallerySection() {
           </div>
         </motion.div>
 
-        {/* Gallery Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        {/* Gallery Grid - Masonry Layout */}
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-8 mb-12 space-y-8">
           {filteredMedia.map((item, index) => (
             <motion.div
               key={`${item.type}-${item.url}`}
@@ -162,23 +162,24 @@ export function GallerySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.05 }}
-              className="group cursor-pointer"
+              className="group cursor-pointer break-inside-avoid mb-8"
               onClick={() => openFullscreen(index)}
             >
-              <div className="relative aspect-[4/5] mb-4 overflow-hidden rounded-2xl">
+              <div className="relative overflow-hidden rounded-2xl">
                 {item.type === "image" ? (
                   <Image
                     src={item.url}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-2xl"
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 rounded-2xl"
                     width={1080}
-                    height={1440}
+                    height={1080}
+                    style={{ aspectRatio: 'auto' }}
                   />
                 ) : (
-                  <div className="relative w-full h-full">
+                  <div className="relative w-full">
                     <iframe
                       src={item.url}
-                      className="w-full h-full rounded-2xl"
+                      className="w-full aspect-video rounded-2xl"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     />
@@ -194,7 +195,7 @@ export function GallerySection() {
                   </div>
                 )}
               </div>
-              <h4 className="text-sm text-slate-400 group-hover:text-slate-900 transition-colors">
+              <h4 className="text-sm text-slate-400 group-hover:text-slate-900 transition-colors mt-4">
                 {item.title}
               </h4>
             </motion.div>
@@ -273,13 +274,15 @@ export function GallerySection() {
                     className="max-w-full max-h-[90vh] object-contain rounded-lg"
                   />
                 ) : (
-                  <div className="relative w-full max-h-[90vh]">
-                    <iframe
-                      src={filteredMedia[currentImageIndex]?.url}
-                      className="w-full h-[80vh] rounded-lg"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
+                  <div className="relative w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
+                    <div className="aspect-video w-full min-h-[40vh] sm:min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh]">
+                      <iframe
+                        src={filteredMedia[currentImageIndex]?.url}
+                        className="w-full h-full rounded-lg"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    </div>
                   </div>
                 )}
                 

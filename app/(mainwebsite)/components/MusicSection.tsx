@@ -136,9 +136,9 @@ export function MusicSection() {
                         <p className="text-sm text-slate-400">{song.singer}</p>
                       </div>
                       <div className="flex items-center gap-4">
-                        <Badge variant="outline" className="border-slate-400 text-slate-400">
+                        {/* <Badge variant="outline" className="border-slate-400 text-slate-400">
                           {song.genre}
-                        </Badge>
+                        </Badge> */}
                         <span className="text-sm text-slate-400">{song.year}</span>
                       </div>
                     </motion.div>

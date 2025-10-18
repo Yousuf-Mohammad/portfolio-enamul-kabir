@@ -4,7 +4,7 @@ import React from 'react'
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/public/assets/Images/heroImage.jpg";
+import heroImage from "@/public/assets/Images/heroImage2.png";
 
 export function HeroSection() {
   const scrollToSection = (id: string) => {
@@ -23,7 +23,7 @@ export function HeroSection() {
           alt="Musician"
           width={1920}
           height={1080}
-          className="w-full h-full object-cover  blur-sm brightness-50 contrast-120"    
+          className="w-full h-full object-cover object-top  blur-xs brightness-50 contrast-120"    
         />
         <div className="absolute inset-0  min-h-screen bg-gradient-to-r from-black via-black/10 to-black  blur-sm brightness-50 contrast-120" />
       </div> 
