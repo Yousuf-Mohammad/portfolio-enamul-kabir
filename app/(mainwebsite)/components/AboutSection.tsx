@@ -3,14 +3,76 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import aboutImage from "@/public/assets/Images/studio.jpg";
+import aboutImage from "@/public/assets/Images/aboutImage.jpg";
+import { useState, useEffect, useRef } from "react";
+
+// Custom hook for counting animation
+function useCountUp(end: number, duration: number = 2000, start: number = 0) {
+  const [count, setCount] = useState(start);
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, [isVisible]);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    let startTime: number;
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const currentCount = Math.floor(start + (end - start) * easeOutQuart);
+      
+      setCount(currentCount);
+      
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [isVisible, end, duration, start]);
+
+  return { count, ref };
+}
+
+// Counter component
+function Counter({ number, suffix, label }: { number: number; suffix: string; label: string }) {
+  const { count, ref } = useCountUp(number, 2000, 0);
+  
+  return (
+    <div ref={ref} className="text-center">
+      <h2 className="text-5xl md:text-6xl mb-3 text-slate-400">
+        {count.toLocaleString()}{suffix}
+      </h2>
+      <p className="text-sm text-slate-400 uppercase tracking-wider">{label}</p>
+    </div>
+  );
+}
 
 export function AboutSection() {
   const stats = [
-    { number: "36M", label: "People Engaged Yearly" },
-    { number: "1000+", label: "Artistry Delivered Works" },
-    { number: "100", label: "Instrument Total" },
-    { number: "90", label: "Performances Annually" },
+    { number: 500, suffix: "+", label: "Songs Written" },
+    { number: 300, suffix: "+", label: "Events Organized" },
+    { number: 100, suffix: "+", label: "Musics Recorded" },
+    { number: 50, suffix: "+", label: "Movies/Dramas Produced" },
   ];
 
   return (
@@ -31,10 +93,12 @@ export function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="text-center"
             >
-              <h2 className="text-5xl md:text-6xl mb-3 text-slate-400">{stat.number}</h2>
-              <p className="text-sm text-slate-400 uppercase tracking-wider">{stat.label}</p>
+              <Counter 
+                number={stat.number} 
+                suffix={stat.suffix} 
+                label={stat.label} 
+              />
             </motion.div>
           ))}
         </motion.div>
@@ -47,33 +111,25 @@ export function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl md:text-6xl mb-8 text-slate-400">About Me</h2>
+            <h2 className="text-5xl md:text-6xl mb-8 text-slate-400">A Soul's Sketch 
+            </h2>
             <div className="space-y-6 text-slate-400">
-              <p className="leading-relaxed text-slate-400">
+              <p className="leading-relaxed text-slate-400 text-justify ">
                 Enamul Kabir Sujan is one of Bangladesh&apos;s distinguished creative figures — a lyricist, 
                 producer, event organizer, and media entrepreneur with decades of contribution to the 
                 country&apos;s entertainment and cultural landscape.
               </p>
-              <p className="leading-relaxed text-slate-400">
+              <p className="leading-relaxed text-slate-400 text-justify ">
                 As the Owner & CEO of Rupkotha Productions and Rupkotha Music, and Founder of Rupkotha 
                 Publications Ltd., he has built a diversified portfolio spanning film, music, and publishing.
               </p>
-              <p className="leading-relaxed text-slate-400">
+              <p className="leading-relaxed text-slate-400 text-justify ">
                 Sujan&apos;s lyrical works reflect the depth of Bangla emotion and modern musical evolution. 
                 Beyond artistry, he is known for his visionary leadership and commitment to cultural development, 
                 serving in multiple key national organizations.
               </p>
             </div>
-            <Button 
-              variant="outline" 
-              className="border-white/20 bg-slate-400 text-black hover:bg-white hover:text-black transition-all rounded mt-6"
-              onClick={() => {
-                const element = document.getElementById("ventures");
-                if (element) element.scrollIntoView({ behavior: "smooth" });
-              }}
-            >
-              Explore Ventures
-            </Button>
+         
           </motion.div>
 
           <motion.div
@@ -81,14 +137,14 @@ export function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative w-full h-full rounded-2xl overflow-hidden shadow-lg shadow-gray-950"
+            className="relative h-[85%] w-full rounded-3xl overflow-hidden "
           >
             <Image
               src={aboutImage}
-              alt="Studio"
-              width={1080}
-              height={1440}
-              className="w-full h-full object-cover rounded-lg "
+              alt="About Image"
+              width={600}
+              height={600}
+              className="w-full h-full object-cover rounded-3xl object-top "
             />
           </motion.div>
         </div>
@@ -99,14 +155,14 @@ export function AboutSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto text-center py-16"
+          className="max-w-4xl mx-auto text-center py-16 bg-orange-500 rounded-3xl p-2 shadow-lg shadow-orange-950"
         >
-          <blockquote className="text-3xl md:text-4xl italic mb-6 leading-relaxed text-slate-400">
+          <blockquote className="text-2xl md:text-3xl italic mb-6 leading-relaxed text-slate-900 font-paprika ">
             &ldquo;Music, creativity, and compassion are the languages that unite people. 
             My journey has always been about connecting hearts through words, rhythm, 
             and purposeful work.&rdquo;
           </blockquote>
-            <p className="text-sm text-slate-400 uppercase tracking-wider">— Enamul Kabir Sujan</p>
+            <p className="text-3xl text-slate-950  font-lavishly-yours">— Enamul Kabir Sujan</p>
         </motion.div>
       </div>
     </section>

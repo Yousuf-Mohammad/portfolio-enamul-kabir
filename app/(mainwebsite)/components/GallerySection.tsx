@@ -132,8 +132,8 @@ export function GallerySection() {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <p className="text-sm uppercase tracking-wider text-slate-400 mb-4">Visual Journey</p>
-          <h2 className="text-5xl md:text-7xl mb-8 text-slate-400">Gallery</h2>
+     
+          <h2 className="text-5xl md:text-7xl mb-8 text-slate-400">Visual Journey</h2>
           
           {/* Filters */}
           <div className="flex flex-wrap gap-4">
@@ -202,18 +202,7 @@ export function GallerySection() {
           ))}
         </div>
 
-        {/* Load More */}   
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center"
-        >
-            <Button variant="outline" size="lg" className="border-white/20 bg-slate-400 text-black hover:bg-white hover:text-black transition-all rounded">
-            Load More
-          </Button>
-        </motion.div>
+   
       </div>
 
       {/* Fullscreen Modal */}

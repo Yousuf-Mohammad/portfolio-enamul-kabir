@@ -37,7 +37,7 @@ export function HeroSection() {
             transition={{ duration: 1, delay: 0.2 }}
             className="mb-8"
           >
-            <h1 className="text-6xl md:text-8xl lg:text-9xl mb-6 tracking-tight font-playfair-display text-slate-400 ">
+            <h1 className="text-3xl md:text-4xl lg:text-6xl mb-6 tracking-tight font-playfair-display text-slate-400 ">
               ENAMUL<br />KABIR SUJAN
             </h1>
           </motion.div>
@@ -49,14 +49,24 @@ export function HeroSection() {
             className="max-w-2xl mb-12"
           >
             <p className="text-xl md:text-2xl text-muted-foreground mb-4 text-slate-400">
-              The Visionary&apos;s Biggest Musical<br />Event Organizer
+            Lyricist | Producer | Event Organizer | Entrepreneur 
+
             </p>
-            <p className="text-base  leading-relaxed text-gray-400">
-              Celebrating the timeless words and visionary leadership of a man who continues 
-              to shape the rhythm of Bangla culture. A celebrated lyricist, film producer, 
-              event organizer, and entrepreneur with decades of contribution to Bangladesh&apos;s 
-              entertainment and cultural landscape.
-            </p>
+            <motion.div 
+              className="relative"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              
+              <blockquote className="text-lg md:text-xl leading-relaxed text-slate-300 italic font-light pl-8 pr-4 py-4 border-l-2 border-slate-300/30 bg-slate-800/20 backdrop-blur-sm rounded-r-lg hover:bg-slate-800/30 transition-all duration-300 font-paprika">
+                Let your heart be a river, flowing light into the darkest night.<br />
+                <p className="text-3xl text-slate-400 font-lavishly-yours mt-4 text-right">
+              - Enamul Kabir Sujan
+             </p>
+              </blockquote>
+             
+            </motion.div>
           </motion.div>
 
           <motion.div
@@ -65,14 +75,14 @@ export function HeroSection() {
             transition={{ duration: 1, delay: 0.6 }}
             className="flex gap-4"
           >
-            <Button 
+            {/* <Button 
               variant="outline" 
               size="lg" 
               onClick={() => scrollToSection("about")}
               className="border-white/20 bg-slate-400 text-black hover:bg-white hover:text-black transition-all rounded"
             >
               Learn More
-            </Button>
+            </Button> */}
           </motion.div>
         </div>
       </div>

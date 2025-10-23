@@ -6,47 +6,72 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Play, Music, Book, ArrowRight } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Play, Music, Book, ArrowRight, X } from "lucide-react";
+import { useState } from "react";
 
 export function MusicSection() {
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  
   const featuredSongs = [
     {
-      title: "Premer Gaan",
-      singer: "Various Artists • Rahman Ahmed",
-      year: "2024",
-      genre: "Romantic",
+      id: "qPU_NuaLBGE",
+      title: "Bangladesh Amar",
+      channel: "RUPKOTHAMUSIC"
+    },
+   
+    {
+      id: "W5KachMJFcs",
+      title: "Jacche Jibon",
+      channel: "RUPKOTHAMUSIC"
     },
     {
-      title: "Shadhinota",
-      singer: "Habib Wahid • Shayan Chowdhury",
-      year: "2023",
-      genre: "Patriotic",
+      id: "uVdZxm_3w_I",
+      title: "Shanti Ashuk fire",
+      channel: "RUPKOTHAMUSIC"
     },
     {
-      title: "Mon Bojhena",
-      singer: "Tahsan Khan • Arnob",
-      year: "2023",
-      genre: "Pop",
+      id: "x8ia2FJLzj0",
+      title: "Ami Valo Nei ",
+      channel: "RUPKOTHAMUSIC"
+    },
+   
+    {
+      id: "yYSaput5ESY",
+      title: "Krishnokoli",
+      channel: "RUPKOTHAMUSIC"
     },
     {
-      title: "Rupkotha",
-      singer: "Mila Islam • Fuad Almuqtadir",
-      year: "2022",
-      genre: "Contemporary",
+      id: "5euSxHpsZic",
+      title: "Ami Vishon Ekla",
+      channel: "MultisourcingLtd"
+    },
+   
+    
+    {
+      id: "pT7FkyjFpLg",
+      title: "Diba Shopno",
+      channel: "MultisourcingLtd"
     },
     {
-      title: "Shopno Dekhi",
-      singer: "Hridoy Khan • Ayon Chaklader",
-      year: "2022",
-      genre: "Folk Fusion",
+      id: "srxi5tRXBLM",
+      title: "Ar Diona Jantrona",
+      channel: "RUPKOTHAMUSIC"
     },
     {
-      title: "Bhalobasha Chay",
-      singer: "Various Artists",
-      year: "2021",
-      genre: "Romantic",
-    },
+      id: "qOwClkjbYw4",
+      title: "Mayar Badhon ",
+      channel: "RUPKOTHAMUSIC"
+    }
   ];
+
+  const openVideo = (videoId: string) => {
+    setSelectedVideo(videoId);
+  };
+
+  const closeVideo = () => {
+    setSelectedVideo(null);
+  };
 
   return (
     <section id="music" >
@@ -60,7 +85,7 @@ export function MusicSection() {
           className="mb-6"
         >
           <h2 className="text-5xl md:text-7xl mb-4 text-slate-400">
-            Music & Lyrics
+            Notable Contributions
           </h2>
           <p className="text-lg text-slate-400 max-w-3xl leading-relaxed">
             Explore a collection of lyrical masterpieces that have become part of Bangladesh&apos;s cultural memory.
@@ -118,28 +143,30 @@ export function MusicSection() {
                   Lyrical masterpieces performed by Bangladesh&apos;s most beloved voices.
                 </p>
                 
-                <div className="space-y-4 ">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {featuredSongs.map((song, index) => (
                     <motion.div
-                      key={song.title}
+                      key={song.id}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
-                      className="flex items-center gap-4 p-4 hover:bg transition-all group cursor-pointer border border-border border-slate-800 rounded-xl "
+                      className="group cursor-pointer border border-border rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300"
+                      onClick={() => openVideo(song.id)}
                     >
-                      <div className="w-10 h-10 border border-border rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all text-slate-400">
-                        <Play size={16}  />
+                      <div className="relative aspect-video  w-full ">
+                        <img
+                          src={`https://img.youtube.com/vi/${song.id}/maxresdefault.jpg`}
+                          alt={song.title}
+                          width={500}
+                          height={500}
+                          className="object-cover group-hover:scale-105 transition-transform h-full w-full duration-300"
+                        />
+                        
                       </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-medium text-slate-400">{song.title}</h4>
-                        <p className="text-sm text-slate-400">{song.singer}</p>
-                      </div>
-                      <div className="flex items-center gap-4">
-                        {/* <Badge variant="outline" className="border-slate-400 text-slate-400">
-                          {song.genre}
-                        </Badge> */}
-                        <span className="text-sm text-slate-400">{song.year}</span>
+                      <div className="p-4">
+                        <h4 className="text-lg font-medium text-slate-400 mb-1">{song.title}</h4>
+                        <p className="text-sm text-slate-500">{song.channel}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -183,6 +210,29 @@ export function MusicSection() {
           </Tabs>
         </motion.div>
       </div>
+
+      {/* Video Modal */}
+      <Dialog open={!!selectedVideo} onOpenChange={closeVideo}>
+        <DialogContent className="max-w-4xl w-full p-0 bg-black border-slate-700">
+          <DialogHeader className="p-6 pb-0">
+            <DialogTitle className="text-white text-xl">Music Video</DialogTitle>
+          </DialogHeader>
+          <div className="relative aspect-video p-6 pt-0">
+            {selectedVideo && (
+              <iframe
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1&rel=0`}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="rounded-lg"
+              />
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }

@@ -34,16 +34,7 @@ export function VenturesSection() {
       title: "E-Radio 16343",
       description: "Bangladesh's innovative IVR-based music radio",
     },
-    {
-      icon: Users,
-      title: "Club 9294 Limited",
-      description: "Cultural and networking platform for creative community",
-    },
-    {
-      icon: Tv,
-      title: "WE TV",
-      description: "Digital media and entertainment channel bringing quality content",
-    },
+ 
   ];
 
   return (
@@ -58,19 +49,19 @@ export function VenturesSection() {
           className="mb-16"
         >
           {/* <p className="text-sm uppercase tracking-wider text-slate-400 mb-4">Portfolio</p> */}
-          <h2 className="text-5xl md:text-7xl mb-6 text-slate-400">Business Ventures</h2>
+          <h2 className="text-5xl md:text-7xl mb-6 text-slate-400"> Ventures</h2>
           <p className="text-lg text-slate-400 max-w-3xl">
             A visionary entrepreneur leading successful ventures in entertainment, media, and technology
           </p>
         </motion.div>
 
         {/* Ventures Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3">
           {ventures.map((venture, index) => {
             const Icon = venture.icon;
             
-            // Calculate grid position
-            const cols = 4; // lg:grid-cols-4
+            // Calculate grid position for 3 columns on large screens
+            const cols = 3; // lg:grid-cols-3
             const rows = Math.ceil(ventures.length / cols);
             const row = Math.floor(index / cols);
             const col = index % cols;
@@ -104,9 +95,23 @@ export function VenturesSection() {
               borderClasses.push('lg:border-r');
             }
             
-            // If it's the only item in the last row, add all borders
-            if (isLastRow && ventures.length % cols === 1) {
-              borderClasses.push('lg:border-t', 'lg:border-l', 'lg:border-r');
+            // Special case for last row items (items 4, 5, 6)
+            if (isLastRow) {
+              // Add top border for all items in last row
+              borderClasses.push('lg:border-t');
+              
+              // For the last row, we have 3 items (4, 5, 6), so add appropriate borders
+              if (col === 0) {
+                // First item in last row - no left border (leftmost)
+              }
+              if (col === 1) {
+                // Middle item in last row - add left border
+                borderClasses.push('lg:border-l');
+              }
+              if (col === 2) {
+                // Last item in last row - add left border only (no right border for rightmost)
+                borderClasses.push('lg:border-l');
+              }
             }
             
             return (
