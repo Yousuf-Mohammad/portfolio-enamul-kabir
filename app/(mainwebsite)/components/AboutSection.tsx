@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import aboutImage from "@/public/assets/Images/aboutImage.jpg";
 import { useState, useEffect, useRef } from "react";
 
@@ -111,7 +110,7 @@ export function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl md:text-6xl mb-8 text-slate-400">A Soul's Sketch 
+            <h2 className="text-5xl md:text-6xl mb-8 text-slate-400">A Soul&apos;s Sketch 
             </h2>
             <div className="space-y-6 text-slate-400">
               <p className="leading-relaxed text-slate-400 text-justify ">

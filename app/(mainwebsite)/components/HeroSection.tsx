@@ -3,16 +3,9 @@
 import React from 'react'
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import heroImage from "@/public/assets/Images/heroImage2.png";
 
 export function HeroSection() {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">

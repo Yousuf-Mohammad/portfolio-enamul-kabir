@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Quote, Star } from "lucide-react";
+import Image from "next/image";
+import { Quote } from "lucide-react";
 
 export function TestimonialsSection() {
   const testimonials = [
@@ -94,16 +95,18 @@ export function TestimonialsSection() {
                 
 
                 {/* Comment */}
-                <blockquote className="text-slate-300 leading-relaxed mb-6 italic">
-                  "{testimonial.comment}"
-                </blockquote>
+                 <blockquote className="text-slate-300 leading-relaxed mb-6 italic">
+                   &ldquo;{testimonial.comment}&rdquo;
+                 </blockquote>
 
                 {/* Author Info */}
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full overflow-hidden bg-slate-600">
-                    <img
+                    <Image
                       src={testimonial.avatar}
                       alt={testimonial.name}
+                      width={48}
+                      height={48}
                       className="w-full h-full object-cover"
                     />
                   </div>

@@ -5,9 +5,8 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Play, Music, Book, ArrowRight, X } from "lucide-react";
+import { Music, Book, ArrowRight } from "lucide-react";
 import { useState } from "react";
 
 export function MusicSection() {
@@ -155,7 +154,7 @@ export function MusicSection() {
                       onClick={() => openVideo(song.id)}
                     >
                       <div className="relative aspect-video  w-full ">
-                        <img
+                        <Image
                           src={`https://img.youtube.com/vi/${song.id}/maxresdefault.jpg`}
                           alt={song.title}
                           width={500}

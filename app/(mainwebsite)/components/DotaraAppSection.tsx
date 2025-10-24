@@ -3,9 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Download, Music, Smartphone, Headphones, Wifi, WifiOff, Search, Play, Star } from "lucide-react";
+import { Download } from "lucide-react";
 import Link from "next/link";
 
 export function DotaraAppSection() {
@@ -38,7 +36,7 @@ export function DotaraAppSection() {
             Dotara Music
           </h2>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed text-justify">
-            Dotara Music – your one-stop destination for Bangla songs and podcasts! Dive into a world of limitless music streaming with our comprehensive service. Whether it's pop, rock, folk, or contemporary beats you crave, our extensive catalog has it all.
+            Dotara Music – your one-stop destination for Bangla songs and podcasts! Dive into a world of limitless music streaming with our comprehensive service. Whether it&apos;s pop, rock, folk, or contemporary beats you crave, our extensive catalog has it all.
           </p>
         <Link href="https://play.google.com/store/apps/details?id=com.dotaramusic.user" target="_blank">
           <Button variant="default" className="rounded-3xl  bg-green-600 text-white px-5 py-3 shadow-lg shadow-green-950 hover:bg-green-700 transition-all duration-300 mt-6">

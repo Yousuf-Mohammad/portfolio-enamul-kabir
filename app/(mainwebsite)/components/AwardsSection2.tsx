@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Award, Trophy, X } from "lucide-react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -12,7 +11,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 export function AwardsSection() {
-  const [selectedAward, setSelectedAward] = useState<any>(null);
+  const [selectedAward, setSelectedAward] = useState<typeof awards[0] | null>(null);
 
   // Sample awards and certificates data
   const awards = [
@@ -72,20 +71,8 @@ export function AwardsSection() {
     }
   ];
 
-  const getIcon = (type: string) => {
-    switch (type) {
-      case "Award":
-        return <Trophy className="w-6 h-6" />;
-      case "Certificate":
-        return <Award className="w-6 h-6" />;
-      case "Recognition":
-        return <Award className="w-6 h-6" />;
-      default:
-        return <Award className="w-6 h-6" />;
-    }
-  };
 
-  const openModal = (award: any) => {
+  const openModal = (award: typeof awards[0]) => {
     setSelectedAward(award);
   };
 

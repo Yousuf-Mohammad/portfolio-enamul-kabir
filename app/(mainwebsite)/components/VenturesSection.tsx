@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Building2, Music, BookOpen, Radio, Smartphone, Tv, Users, Globe } from "lucide-react";
+import { Building2, Music, BookOpen, Radio, Smartphone, Globe } from "lucide-react";
 
 export function VenturesSection() {
   const ventures = [
