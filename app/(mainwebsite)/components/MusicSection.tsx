@@ -154,7 +154,7 @@ export function MusicSection() {
                       onClick={() => openVideo(song.id)}
                     >
                       <div className="relative aspect-video  w-full ">
-                        <Image
+                        <img
                           src={`https://img.youtube.com/vi/${song.id}/maxresdefault.jpg`}
                           alt={song.title}
                           width={500}

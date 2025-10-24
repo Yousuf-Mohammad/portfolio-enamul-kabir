@@ -142,6 +142,12 @@
   .font-beau-rivage {
     font-family: var(--font-beau-rivage);
   }
+  .font-paprika {
+    font-family: var(--font-paprika);
+  }
+  .font-lavishly-yours {
+    font-family: var(--font-lavishly-yours);
+  }
 
   :root {
     --background: 0 0% 100%;
