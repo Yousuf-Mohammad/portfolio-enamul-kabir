@@ -33,10 +33,10 @@ import {
     };
   
     const socialLinks = [
-      { icon: Facebook, label: "Facebook", url: "#" },
-      { icon: Instagram, label: "Instagram", url: "#" },
-      { icon: Youtube, label: "YouTube", url: "#" },
-      { icon: Linkedin, label: "LinkedIn", url: "#" },
+      { icon: Facebook, label: "Facebook", url: "https://www.facebook.com/rupkotha.sujan " },
+      // { icon: Instagram, label: "Instagram", url: "#" },
+      { icon: Youtube, label: "YouTube", url: "https://www.youtube.com/@RUPKOTHAMUSIC " },
+      { icon: Linkedin, label: "LinkedIn", url: "https://www.linkedin.com/in/enamul-kabir-sujan-203a0811a/?originalSubdomain=bd " },
     ];
   
     return (
@@ -60,6 +60,7 @@ import {
                     <a
                       key={social.label}
                       href={social.url}
+                      target="_blank"
                       className="w-10 h-10  flex items-center justify-center hover:bg-white text-slate-400 hover:text-black transition-all"
                     >
                       <Icon size={28} />
