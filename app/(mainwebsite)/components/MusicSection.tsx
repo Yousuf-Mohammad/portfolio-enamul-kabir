@@ -84,7 +84,7 @@ export function MusicSection() {
           className="mb-6"
         >
           <h2 className="text-5xl md:text-7xl mb-4 text-slate-400">
-            Notable Contributions
+            Notable <span className="text-orange-600 font-bold ">Contributions</span>
           </h2>
           <p className="text-lg text-slate-400 max-w-3xl leading-relaxed">
             Explore a collection of lyrical masterpieces that have become part of Bangladesh&apos;s cultural memory.
@@ -123,7 +123,7 @@ export function MusicSection() {
           transition={{ duration: 0.8 }}
         >
           <Tabs defaultValue="songs" className="w-full border border-border  p-4 rounded-2xl ">
-            <TabsList className="grid w-full  grid-cols-2 gap-2 mb-6">
+            {/* <TabsList className="grid w-full  grid-cols-2 gap-2 mb-6">
               <TabsTrigger value="songs" className="flex items-center gap-2 border border-border p-3 rounded-2xl ">
                 <Music className="w-4 h-4" />
                 Songs
@@ -132,7 +132,7 @@ export function MusicSection() {
                 <Book className="w-4 h-4 " />
                 Lyrics Archive
               </TabsTrigger>
-            </TabsList>
+            </TabsList> */}
 
             <TabsContent value="songs" className="space-y-12">
               {/* Popular Songs Section */}

@@ -35,12 +35,11 @@ export function ContactSection() {
         >
           {/* Header */}
           <div className="mb-16 text-center">
-            <p className="text-sm uppercase tracking-wider text-slate-400 mb-4">Get in Touch</p>
-            <h2 className="text-5xl md:text-7xl mb-6 text-slate-400">Contact</h2>
+            <h2 className="text-5xl md:text-7xl mb-6 text-slate-400">Get in <span className="text-orange-600 font-bold ">Touch</span></h2>
             <p className="text-lg text-slate-400">
               For collaborations, interviews, or partnerships — let&apos;s connect
             </p>
-          </div>
+          </div>  
 
           {/* Contact Info */}
           <motion.div

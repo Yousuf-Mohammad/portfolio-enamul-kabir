@@ -1,36 +1,42 @@
 "use client";
 import { motion } from "framer-motion";
 import { Building2, Music, BookOpen, Radio, Smartphone, Globe } from "lucide-react";
+import rupkothaProductions from "@/public/assets/Images/rupkotha.png";
+import rupkothaMusic from "@/public/assets/Images/rupkothaMusic.png";
+import rupkothaPublications from "@/public/assets/Images/rupkothaPub.png";
+import dotara from "@/public/assets/Images/dotara.png";
+import bdStar24 from "@/public/assets/Images/BDStar24.png";
+import eRadio16343 from "@/public/assets/Images/Radio.png";
 
 export function VenturesSection() {
   const ventures = [
     {
-      icon: Building2,
+      icon: rupkothaProductions,
       title: "Rupkotha Productions",
       description: "Film and TV production house creating compelling content for Bangladeshi audiences",
     },
     {
-      icon: Music,
+      icon: rupkothaMusic,
       title: "Rupkotha Music",
       description: "Record label nurturing Bangladeshi talent and promoting original Bangla music",
     },
     {
-      icon: BookOpen,
+      icon: rupkothaPublications,
       title: "Rupkotha Publications",
       description: "Publishing platform for books, lyrics, and literary works celebrating culture",
     },
     {
-      icon: Smartphone,
+      icon: dotara,
       title: "Dotara.com",
       description: "Digital OTT music platform promoting Bangla songs globally",
     },
     {
-      icon: Globe,
+      icon: bdStar24,
       title: "BdStar24.com",
       description: "Leading online entertainment magazine covering cultural scene",
     },
     {
-      icon: Radio,
+      icon: eRadio16343,
       title: "E-Radio 16343",
       description: "Bangladesh's innovative IVR-based music radio",
     },
@@ -49,7 +55,7 @@ export function VenturesSection() {
           className="mb-16"
         >
           {/* <p className="text-sm uppercase tracking-wider text-slate-400 mb-4">Portfolio</p> */}
-          <h2 className="text-5xl md:text-7xl mb-6 text-slate-400"> Ventures</h2>
+            <h2 className="text-5xl md:text-7xl mb-6 text-slate-400"> <span className="text-orange-600 font-bold ">Ventures</span></h2>
           <p className="text-lg text-slate-400 max-w-3xl">
             A visionary entrepreneur leading successful ventures in entertainment, media, and technology
           </p>
@@ -124,7 +130,7 @@ export function VenturesSection() {
                 className={`p-8 hover:text-slate-900 transition-all group bg-black lg:border-slate-400 ${borderClasses.join(' ')}`}
               >
                     <div className="w-12 h-12 flex items-center justify-center transition-all text-slate-400">
-                  <Icon size={20} />
+                  <img src={Icon.src} alt={venture.title} width={20} height={20} className="w-full h-full object-contain" />
                 </div>
                 <h3 className="text-lg mb-2 text-slate-400">{venture.title}</h3>
                 <p className="text-sm text-slate-400">

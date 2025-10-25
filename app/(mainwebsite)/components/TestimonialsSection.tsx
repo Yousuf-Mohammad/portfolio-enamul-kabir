@@ -3,56 +3,61 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Quote } from "lucide-react";
-
+import NagarBaulJames from "@/public/assets/review/james.jpeg";
+import Asif from "@/public/assets/review/asif_akbar.jpg";
+import kabir from "@/public/assets/review/kabir.jpg"
+import nachiketa from "@/public/assets/review/Nachiketa_Chakraborty.jpg"
+import rathi from "@/public/assets/review/rathi.webp"
+import runalaila from "@/public/assets/review/runa.jpg"
 export function TestimonialsSection() {
   const testimonials = [
     {
       id: 1,
-      name: "Habib Wahid",
+      name: "Nagar Baul James ",
       role: "Renowned Singer",
-      comment: "Enamul Kabir Sujan's lyrics have the power to touch hearts and souls. His words resonate with the deepest emotions of Bengali culture. Working with him has been an incredible journey of artistic collaboration.",
+      comment: "Enamul Kabir Sujan brilliantly blends creativity and entrepreneurship, nurturing talent while maintaining high-quality productions. Truly inspiring for the music industry",
       rating: 5,
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+      avatar: NagarBaulJames
     },
     {
       id: 2,
-      name: "Dr. Rashid Ahmed",
+      name: "Asif Akbar",
       role: "Cultural Critic & Writer",
-      comment: "Sujan's contribution to Bengali music and culture is unparalleled. His ability to weave contemporary themes with traditional values makes him a true cultural ambassador of Bangladesh.",
+      comment: "His lyrics are precise and heartfelt, and his leadership in production shows his respect for the entire creative process. A remarkable contributor to Bengali music.",
       rating: 5,
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
+      avatar: Asif
     },
     {
       id: 3,
-      name: "Mila Islam",
+      name: "Runa Laila",
       role: "Music Producer",
-      comment: "As a producer, I've seen many lyricists, but Sujan's understanding of melody and rhythm is exceptional. His lyrics don't just tell stories; they create musical landscapes that elevate every composition.",
+      comment: "Enamul brings awareness and sensitivity to his projects, valuing the artist’s voice while pushing creative boundaries. His work elevates Bangla music",
       rating: 5,
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face"
+      avatar: runalaila
     },
     {
       id: 4,
-      name: "Professor Anisul Haque",
+      name: " Nachiketa Chakraborty",
       role: "Academic & Literature Scholar",
-      comment: "Enamul Kabir Sujan represents the bridge between traditional Bengali literature and modern musical expression. His work preserves our cultural heritage while embracing contemporary artistic sensibilities.",
+      comment: "Enamul’s work fosters cross-border cultural dialogue and engages diverse voices. His vision goes beyond entertainment, uniting Bengali culture.",
       rating: 5,
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face"
+      avatar: nachiketa
     },
     {
       id: 5,
-      name: "Tahsan Khan",
+      name: "Rathindranath Roy",
       role: "Singer & Composer",
-      comment: "Sujan's lyrics have given voice to countless emotions that were difficult to express. His words have the rare quality of being both deeply personal and universally relatable. A true master of his craft.",
+      comment: "He articulates themes of identity and aspiration with clarity, creating environments where artists can flourish. His contributions are truly commendable",
       rating: 5,
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+      avatar: rathi
     },
     {
       id: 6,
-      name: "Sharmin Sultana",
+      name: "Kabir Suman",
       role: "Event Organizer & Media Professional",
-      comment: "Working with Enamul Kabir Sujan has been transformative. His vision for cultural events and his commitment to promoting Bengali arts have inspired countless others in the industry. A true leader and visionary.",
+      comment: "Enamul Kabir Sujan values sincerity in both lyrics and production. His respect for artists makes his work stand out in our musical landscape.",
       rating: 5,
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"
+      avatar: kabir
     }
   ];
 
@@ -68,7 +73,7 @@ export function TestimonialsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-7xl mb-6 text-slate-400">
-            What People Say
+            What <span className="text-orange-600 font-bold ">People</span> Say
           </h2>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
             Testimonials from artists, colleagues, and cultural figures who have worked with Enamul Kabir Sujan
@@ -101,13 +106,13 @@ export function TestimonialsSection() {
 
                 {/* Author Info */}
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden bg-slate-600">
+                  <div className="w-16 h-16 rounded-full overflow-hidden bg-slate-600">
                     <Image
                       src={testimonial.avatar}
                       alt={testimonial.name}
-                      width={48}
-                      height={48}
-                      className="w-full h-full object-cover"
+                      width={100}
+                      height={100}
+                      className="w-full h-full object-cover rounded-full object-center"
                     />
                   </div>
                   <div>

@@ -11,73 +11,74 @@ import 'swiper/css/pagination';
 export function NewsSection() {
   const newsItems = [
     {
-      image: "https://images.unsplash.com/photo-1661261400335-7dc71eb2b5a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdXNpYyUyMHN0dWRpbyUyMHByb2R1Y2VyfGVufDF8fHx8MTc2MDYyODAzOHww&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "Enamul Kabir Sujan's Musical Journey Featured in Daily Manab Zamin",
-      date: "December 15, 2024",
+      image: "https://mzamin.com/uploads/news/main/43696_en.webp",
+      title: "Enamul Kabir Sujan is the coordinator of the USBCCI Bangladesh",
+      date: "February 21,  2023",
       link: "https://mzamin.com/news.php?news=43696#gsc.tab=0",
       source: "Daily Manab Zamin"
     },
     {
-      image: "https://images.unsplash.com/photo-1732186702796-ecb3c05d1968?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYW5nbGFkZXNoJTIwbXVzaWMlMjBjdWx0dXJlfGVufDF8fHx8MTc2MDcwNzk5NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "Cultural Excellence Recognition in Ittefaq Newspaper",
-      date: "November 28, 2024",
+      image: "https://cdn.ittefaqbd.com/contents/cache/images/1100x618x1/uploads/a/2020/12/30/image-210388-1609320509.jpg",
+      title: "Prince Mahmud composed the music for Enamul Kabir Sujan's song",
+      date: "December 30, 2020",
       link: "https://www.ittefaq.com.bd/210388",
       source: "Daily Ittefaq"
     },
     {
-      image: "https://images.unsplash.com/photo-1692930675044-d1309a0e6b18?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaG90byUyMGdhbGxlcnklMjBleGhpYml0aW9ufGVufDF8fHx8MTc2MDcwNzk5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "Bangladeshi Music Industry Spotlight in BDNews24",
-      date: "October 22, 2024",
+      image: "https://cdn.bdnews24.com/bdnews24/media/bdnews24-english/import/media/2020/09/16/suman-kabir-160920-01.jpg",
+      title: "Kabir Suman's song comes on his birthday",
+      date: "March 16, 2022",
       link: "https://bangla.bdnews24.com/glitz/article2031034.bdnews",
       source: "BDNews24"
     },
     {
-      image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdWx0dXJhbCUyMGV2ZW50fGVufDF8fHx8MTc2MDcwNzk5N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "Kabir Sumon Vocalises Bangladeshi Lyrics - Bangladesh Post",
-      date: "September 18, 2024",
+      image: "https://bangladeshpost.net/webroot/uploads/featureimage/2020-09/5f6208d51237f.jpg",
+      title: "Kabir Sumon vocalises Bangladeshi lyrics",
+      date: "September 16, 2024",
       link: "https://bangladeshpost.net/posts/kabir-sumon-vocalises-bangladeshi-lyrics-42457",
       source: "Bangladesh Post"
     },
     {
-      image: "https://images.unsplash.com/photo-1511578314322-379afb476865?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWRpYSUyMHByb2Zlc3Npb25hbHxlbnwxfHx8MTc2MDcwNzk5OHww&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "Media Industry Insights in News24BD",
+      image: "https://asset.news24bd.tv/public/news_images/2023/03/19/1679245951-b916cc93c17f7bfe4db3363a060e6ce0.jpg?w=828&q=100",
+      title: "Press conference held on the occasion of USBCCI's Business Expo",
       date: "August 12, 2024",
       link: "https://www.news24bd.tv/details/129519",
       source: "News24BD"
     },
+    
     {
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbnRyZXByZW5ldXJ8ZW58MXx8fHwxNzYwNzA3OTk5fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "Economic Impact Analysis in Dhaka Post",
-      date: "July 25, 2024",
-      link: "https://www.dhakapost.com/economy/181036",
-      source: "Dhaka Post"
-    },
-    {
-      image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaWxtJTIwcHJvZHVjdGlvbnxlbnwxfHx8MTc2MDcwODAwMHww&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "Made in Chittagong Movie Release Coverage",
-      date: "June 30, 2024",
+      image: "https://i0.wp.com/www.channelionline.com/wp-content/uploads/2023/02/made-in-ctg.jpg?resize=750%2C536&quality=100&ssl=1",
+      title: "'Made in Chittagong' is being released in 51 theaters in the United States",
+      date: "February 9, 2023",
       link: "https://www.channelionline.com/made-in-chittagong-movie-release/",
       source: "Channel i Online"
     },
     {
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWdpb25hbCUyMG5ld3N8ZW58MXx8fHwxNzYwNzA4MDAxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "Regional News Coverage in Samakal",
-      date: "May 15, 2024",
+      image: "https://samakal.com/media/imgAll/uploads/2022/06/online/photos/086-samakal-6299f441d8c3d.jpg",
+      title: "Nachiketa sang an anti-war song to the tune of Sujan",
+      date: "June 3, 2022",
       link: "https://samakal.com/rangpur/article/2206114728",
       source: "Samakal"
     },
     {
-      image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9iYXNoJTIwcG90cm98ZW58MXx8fHwxNzYwNzA4MDAyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "Probash Potro Feature in BD Pratidin",
+      image: "https://cdn.bd-pratidin.com/public/news_images/2023/02/08/130112_bangladesh_pratidin_Untitled-1.jpg",
+      title: "Made in Chittagong in 51 cinemas in America",
       date: "February 8, 2023",
       link: "https://www.bd-pratidin.com/probash-potro/2023/02/08/856609",
-      source: "BD Pratidin"
+      source: "Bangladesh Pratidin"
+    },
+    {
+      image: "https://samakal.com/media/imgAll/uploads/2022/06/online/photos/086-samakal-6299f441d8c3d.jpg",
+      title: "Nachiketa sang an anti-war song to the tune of Sujan",
+      date: "June 3, 2022",
+      link: "https://samakal.com/rangpur/article/2206114728",
+      source: "Samakal"
     }
   ];
 
   return (
-    <section id="news" className="">
-      <div className="container px-10  py-10">
+    <section id="news" className="py-16 sm:py-24 lg:py-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -88,7 +89,7 @@ export function NewsSection() {
         >
           <div>
             {/* <p className="text-sm uppercase tracking-wider text-slate-400 mb-4">Latest Updates</p> */}
-            <h2 className="text-5xl md:text-7xl text-slate-400"> News & Articles</h2>
+            <h2 className="text-5xl md:text-7xl text-slate-400"> News & <span className="text-orange-600 font-bold ">Articles</span></h2>
           </div>
           {/* <Button 
             variant="link" 
@@ -103,11 +104,12 @@ export function NewsSection() {
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={24}
-            slidesPerView={1}
+            slidesPerView={1} 
             slidesPerGroup={1}
             loop={true}
+          
             autoplay={{
-              delay: 5000,
+              delay: 3000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
@@ -122,6 +124,11 @@ export function NewsSection() {
               bulletActiveClass: 'news-swiper-pagination-bullet-active',
             }}
             breakpoints={{
+              640: {
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+                spaceBetween: 20,
+              },
               768: {
                 slidesPerView: 3,
                 slidesPerGroup: 3,
@@ -131,7 +138,7 @@ export function NewsSection() {
             className="news-swiper"
           >
             {newsItems.map((item, index) => (
-              <SwiperSlide key={item.title}>
+              <SwiperSlide key={`news-${index}`}>
                 <a href={item.link} target="_blank" rel="noopener noreferrer">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -141,18 +148,15 @@ export function NewsSection() {
                   className="group cursor-pointer"
                 >
                   <div className="relative aspect-[4/3] mb-6 overflow-hidden">
-                    <Image
+                    <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      width={1080}
-                      height={1440}
-                    />
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-center" />
                   </div>
                   <p className="text-xs uppercase tracking-wider text-slate-400 mb-3">
                     {item.date}
                   </p>
-                  <h3 className="text-xl leading-tight text-slate-700 transition-colors mb-2">
+                  <h3 className="text-2xl font-bold leading-tight text-slate-600 transition-colors mb-2 ">
                     {item.title}
                   </h3>
                   <p className="text-sm text-slate-500 mb-4">
@@ -163,9 +167,9 @@ export function NewsSection() {
                     variant="link" 
                     className="text-slate-400 hover:text-slate-900 p-0 h-auto text-sm"
                   >
-                    <a href={item.link} target="_blank" rel="noopener noreferrer">
+                   
                       Read More →
-                    </a>
+                  
                   </Button>
                 </motion.div>
                 </a>

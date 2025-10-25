@@ -4,73 +4,306 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
+
+// Productions
+import production1 from "@/public/assets/Production/IMG-20230902-WA0001.jpg";
+import production2 from "@/public/assets/Production/IMG-20230902-WA0002.jpg";
+import production3 from "@/public/assets/Production/IMG-20230902-WA0003.jpg";
+import production4 from "@/public/assets/Production/IMG-20230902-WA0004.jpg";
+import production5 from "@/public/assets/Production/IMG-20230902-WA0005.jpg";
+import production6 from "@/public/assets/Production/IMG-20230902-WA0006.jpg";
+import production7 from "@/public/assets/Production/WhatsApp Image 2023-09-02 at 18.14.19e.jpg";
+
+// Awards
+import award1 from "@/public/assets/Awards/IMG-20230901-WA0007.jpg"
+import award2 from "@/public/assets/Awards/IMG-20230901-WA0016.jpg"
+import award3 from "@/public/assets/Awards/IMG-20230901-WA0021.jpg"
+import award4 from "@/public/assets/Awards/IMG-20230902-WA0008.jpg"
+import award5 from "@/public/assets/Awards/IMG-20230902-WA0010.jpg"
+import award6 from "@/public/assets/Awards/IMG-20230902-WA0011.jpg"
+import award7 from "@/public/assets/Awards/IMG-20230902-WA0013.jpg"
+import award8 from "@/public/assets/Awards/IMG-20230902-WA0014.jpg"
+import award9 from "@/public/assets/Awards/IMG-20230902-WA0016.jpg"
+import award10 from "@/public/assets/Awards/IMG-20230902-WA0017.jpg";
+
+// Personal
+import personal1 from "@/public/assets/Personal/10917922_10152763908683821_5699657828297516384_o.jpg"
+import personal2 from "@/public/assets/Personal/13233114_10153844171368821_1091856945645392456_n.jpg"
+import personal3 from "@/public/assets/Personal/44328560_10156120142578821_7370183602425823232_n.jpg"
+import personal4 from "@/public/assets/Personal/519679081_726370443625853_4347573641347741800_n.jpg"
+import personal5 from "@/public/assets/Personal/548221897_773728268890070_8869759387899198366_n.jpg"
+import personal6 from "@/public/assets/Personal/550292162_779922431603987_4012121271477884436_n.jpg"
+import personal7 from "@/public/assets/Personal/557611987_788473394082224_4857474897026294488_n.jpg"
+import personal8 from "@/public/assets/Personal/557695674_788180590778171_2518111243948490733_n.jpg"
+import personal9 from "@/public/assets/Personal/56985312_10156473594983821_5018688428045238272_n.jpg"
+import personal10 from "@/public/assets/Personal/WhatsApp Image 2023-03-22 at 23.16.57 (2).jpeg"
+
+// Music Events
+import musicEvent1 from "@/public/assets/Events/evemt (1).jpg"
+import musicEvent2 from "@/public/assets/Events/evemt (2).jpg"
+import musicEvent3 from "@/public/assets/Events/evemt (3).jpg"
+import musicEvent4 from "@/public/assets/Events/evemt (4).jpg"
+// import musicEvent5 from "@/public/assets/Events/evemt (5).jpg"
+import musicEvent6 from "@/public/assets/Events/evemt (6).jpg"
+import musicEvent7 from "@/public/assets/Events/evemt (7).jpg"
+import musicEvent8 from "@/public/assets/Events/evemt (8).jpg"
+import musicEvent9 from "@/public/assets/Events/evemt (9).jpg"
+import musicEvent10 from "@/public/assets/Events/evemt (10).jpg"
+
+
 export function GallerySection() {
-  const [activeFilter, setActiveFilter] = useState("all");
+  const [activeFilter, setActiveFilter] = useState("productions");
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const filters = ["All", "Music Events", "Awards", "Productions", "Personal", "Videos"];
+  const filters = [ "Productions","Awards",  "Personal", "Music Events","Videos"];
+
+
 
   const mediaItems = [
     {
       type: "image",
-      url: "https://images.unsplash.com/photo-1661261400335-7dc71eb2b5a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdXNpYyUyMHN0dWRpbyUyMHByb2R1Y2VyfGVufDF8fHx8MTc2MDYyODAzOHww&ixlib=rb-4.1.0&q=80&w=1080",
-      category: "music events",
-      title: "Studio Recording Session",
-    },
-    {
-      type: "video",
-      url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      category: "videos",
-      title: "Music Video Production",
-    },
-    {
-      type: "image",
-      url: "https://images.unsplash.com/photo-1759560245150-8dcbb7f01142?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhd2FyZCUyMGNlcnRpZmljYXRlJTIwYWNoaWV2ZW1lbnR8ZW58MXx8fHwxNzYwNzA3NTk3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      category: "awards",
-      title: "Award Ceremony",
-    },
-    {
-      type: "video",
-      url: "https://www.youtube.com/embed/jNQXAC9IVRw",
-      category: "videos",
-      title: "Live Performance Recording",
-    },
-    {
-      type: "image",
-      url: "https://images.unsplash.com/photo-1758630737900-a28682c5aa69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBidXNpbmVzcyUyMG9mZmljZXxlbnwxfHx8fDE3NjA3MDYzOTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      url: production1,
       category: "productions",
-      title: "Production Office",
-    },
-    {
-      type: "video",
-      url: "https://www.youtube.com/embed/9bZkp7q19f0",
-      category: "videos",
-      title: "Behind the Scenes",
+      title: "",
     },
     {
       type: "image",
-      url: "https://images.unsplash.com/photo-1692930675044-d1309a0e6b18?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaG90byUyMGdhbGxlcnklMjBleGhpYml0aW9ufGVufDF8fHx8MTc2MDcwNzk5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-      category: "music events",
-      title: "Cultural Event",
+      url: production2,
+      category: "productions",
+      title: "",
     },
     {
       type: "image",
-      url: "https://images.unsplash.com/photo-1732186702796-ecb3c05d1968?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYW5nbGFkZXNoJTIwbXVzaWMlMjBjdWx0dXJlfGVufDF8fHx8MTc2MDcwNzk5NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      category: "music events",
-      title: "Live Performance",
+      url: production3,
+      category: "productions",
+      title: "",
     },
     {
       type: "image",
-      url: "https://images.unsplash.com/photo-1510873660878-bdf8de0ed851?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMHdvcmtzcGFjZSUyMG1pbmltYWx8ZW58MXx8fHwxNzYwNjQ1MDMxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      category: "personal",
-      title: "Creative Workspace",
+      url: production4,
+      category: "productions",
+      title: "",
     },
+    {
+      type: "image",
+      url: production5,
+      category: "productions",
+      title: "",
+    },
+    {
+      type: "image",
+      url: production6,
+      category: "productions",
+      title: "",
+    },
+    {
+      type: "image",
+      url: production7,
+      category: "productions",
+      title: "",
+    },
+    {
+      type: "image",
+      url: award1,
+      category: "awards",
+      title: "",
+    },
+    {
+      type: "image",
+      url: award2,
+      category: "awards",
+      title: "",
+    },
+    {
+      type: "image",
+      url: award3,
+      category: "awards",
+      title: "",
+    },
+    {
+      type: "image",
+      url: award4,
+      category: "awards",
+      title: "",
+    },
+    {
+      type: "image",
+      url: award5,
+      category: "awards",
+      title: "",
+    },
+    {
+      type: "image",
+      url: award6,
+      category: "awards",
+      title: "",
+    },
+    {
+      type: "image",
+      url: award7,
+      category: "awards",
+      title: "",
+    },
+    {
+      type: "image",
+        url: award8,
+      category: "awards",
+      title: "",
+    },
+     {
+       type: "image",
+       url: award9,
+       category: "awards",
+       title: "",
+     },
+     {
+       type: "image",
+       url: award10,
+       category: "awards",
+       title: "",
+     },
+   {
+    type: "image",
+    url: personal1,
+    category: "personal",
+    title: "",
+   },
+   {
+    type: "image",
+    url: personal2,
+    category: "personal",
+    title: "",
+   },
+   {
+    type: "image",
+    url: personal3,
+    category: "personal",
+    title: "",
+   },
+   {
+    type: "image",
+    url: personal4,
+    category: "personal",
+    title: "",
+   },
+   {
+    type: "image",
+    url: personal5,
+    category: "personal",
+    title: "",
+   },
+   {
+    type: "image",
+    url: personal6,
+    category: "personal",
+    title: "",
+   },
+   {
+    type: "image",
+    url: personal7,
+    category: "personal",
+    title: "",
+   },
+   {
+    type: "image",
+    url: personal8,
+    category: "personal",
+    title: "",
+   },
+   {
+    type: "image",
+    url: personal9,
+    category: "personal",
+    title: "",
+   },
+   {
+    type: "image",
+    url: personal10,
+    category: "personal",
+    title: "",
+   },
+   {
+    type: "image",
+    url: musicEvent1,
+    category: "music events",
+    title: "",
+   },
+   {
+    type: "image",
+    url: musicEvent2,
+    category: "music events",
+    title: "",
+   },
+   {
+    type: "image",
+    url: musicEvent3,
+    category: "music events",
+    title: "",
+   },
+   {
+    type: "image",
+    url: musicEvent4,
+    category: "music events",
+    title: "",
+   },
+  //  {
+  //   type: "image",
+  //   url: musicEvent5,
+  //   category: "music events",
+  //   title: "",
+  //  },
+   {
+    type: "image",
+    url: musicEvent6,
+    category: "music events",
+    title: "",
+   },
+   {
+    type: "image",
+    url: musicEvent7,
+    category: "music events",
+    title: "",
+   },
+   {
+    type: "image",
+    url: musicEvent8,
+    category: "music events",
+    title: "",
+   },
+   {
+    type: "image",
+    url: musicEvent9,
+    category: "music events",
+    title: "",
+   },
+   {
+    type: "image",
+    url: musicEvent10,
+    category: "music events",
+    title: "",
+   },
+  {
+    type: "video",
+    url: "https://www.youtube.com/embed/qOwClkjbYw4",
+    category: "videos",
+    title: "",
+  },
+  {
+    type: "video",
+    url: "https://www.youtube.com/embed/uVdZxm_3w_I",
+    category: "videos",
+    title: "",
+  }
+
   ];
 
-  const filteredMedia = activeFilter === "all" 
-    ? mediaItems 
-    : mediaItems.filter(item => item.category === activeFilter.toLowerCase());
+  const filteredMedia = mediaItems.filter(item => item.category === activeFilter.toLowerCase());
+  
+  // Debug: Log the filtering results
+  console.log('Active Filter:', activeFilter);
+  console.log('Filtered Media Count:', filteredMedia.length);
+  console.log('Filtered Media Categories:', filteredMedia.map(item => item.category));
 
   // Navigation functions
   const openFullscreen = (index: number) => {
@@ -132,7 +365,7 @@ export function GallerySection() {
           className="mb-16"
         >
      
-          <h2 className="text-5xl md:text-7xl mb-8 text-slate-400">Visual Journey</h2>
+          <h2 className="text-5xl md:text-7xl mb-8 text-slate-400">Visual <span className="text-orange-600 font-bold ">Journey</span></h2>
           
           {/* Filters */}
           <div className="flex flex-wrap gap-4">
@@ -153,10 +386,10 @@ export function GallerySection() {
         </motion.div>
 
         {/* Gallery Grid - Masonry Layout */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-8 mb-12 space-y-8">
+        <div key={activeFilter} className="columns-1 md:columns-2 lg:columns-3 gap-8 mb-12 space-y-8">
           {filteredMedia.map((item, index) => (
             <motion.div
-              key={`${item.type}-${item.url}`}
+              key={`${activeFilter}-${item.type}-${index}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -177,7 +410,7 @@ export function GallerySection() {
                 ) : (
                   <div className="relative w-full">
                     <iframe
-                      src={item.url}
+                      src={item.url.toString()}
                       className="w-full aspect-video rounded-2xl"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
@@ -265,7 +498,7 @@ export function GallerySection() {
                   <div className="relative w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
                     <div className="aspect-video w-full min-h-[40vh] sm:min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh]">
                       <iframe
-                        src={filteredMedia[currentImageIndex]?.url}
+                        src={filteredMedia[currentImageIndex]?.url.toString()}
                         className="w-full h-full rounded-lg"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
@@ -275,7 +508,9 @@ export function GallerySection() {
                 )}
                 
                 {/* Media Info */}
-                <div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur-sm rounded-lg p-4">
+                {
+                filteredMedia[currentImageIndex]?.type !== "video" && (
+                  <div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur-sm rounded-lg p-4">
                   <h3 className="text-white text-xl font-medium mb-2">
                     {filteredMedia[currentImageIndex]?.title}
                   </h3>
@@ -283,6 +518,7 @@ export function GallerySection() {
                     {currentImageIndex + 1} of {filteredMedia.length}
                   </p>
                 </div>
+                )}
               </motion.div>
             </div>
           </motion.div>
