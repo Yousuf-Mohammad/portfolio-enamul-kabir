@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",
   outputFileTracingRoot: __dirname,
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
